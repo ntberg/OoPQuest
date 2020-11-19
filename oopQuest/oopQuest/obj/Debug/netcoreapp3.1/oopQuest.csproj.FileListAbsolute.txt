@@ -1,0 +1,15 @@
+C:\Users\DSU\source\repos\oopQuest\oopQuest\bin\Debug\netcoreapp3.1\oopQuest.exe
+C:\Users\DSU\source\repos\oopQuest\oopQuest\bin\Debug\netcoreapp3.1\oopQuest.deps.json
+C:\Users\DSU\source\repos\oopQuest\oopQuest\bin\Debug\netcoreapp3.1\oopQuest.runtimeconfig.json
+C:\Users\DSU\source\repos\oopQuest\oopQuest\bin\Debug\netcoreapp3.1\oopQuest.runtimeconfig.dev.json
+C:\Users\DSU\source\repos\oopQuest\oopQuest\bin\Debug\netcoreapp3.1\oopQuest.dll
+C:\Users\DSU\source\repos\oopQuest\oopQuest\bin\Debug\netcoreapp3.1\oopQuest.pdb
+C:\Users\DSU\source\repos\oopQuest\oopQuest\obj\Debug\netcoreapp3.1\oopQuest.csprojAssemblyReference.cache
+C:\Users\DSU\source\repos\oopQuest\oopQuest\obj\Debug\netcoreapp3.1\oopQuest.Form1.resources
+C:\Users\DSU\source\repos\oopQuest\oopQuest\obj\Debug\netcoreapp3.1\oopQuest.csproj.GenerateResource.cache
+C:\Users\DSU\source\repos\oopQuest\oopQuest\obj\Debug\netcoreapp3.1\oopQuest.AssemblyInfoInputs.cache
+C:\Users\DSU\source\repos\oopQuest\oopQuest\obj\Debug\netcoreapp3.1\oopQuest.AssemblyInfo.cs
+C:\Users\DSU\source\repos\oopQuest\oopQuest\obj\Debug\netcoreapp3.1\oopQuest.csproj.CoreCompileInputs.cache
+C:\Users\DSU\source\repos\oopQuest\oopQuest\obj\Debug\netcoreapp3.1\oopQuest.dll
+C:\Users\DSU\source\repos\oopQuest\oopQuest\obj\Debug\netcoreapp3.1\oopQuest.pdb
+C:\Users\DSU\source\repos\oopQuest\oopQuest\obj\Debug\netcoreapp3.1\oopQuest.genruntimeconfig.cache
