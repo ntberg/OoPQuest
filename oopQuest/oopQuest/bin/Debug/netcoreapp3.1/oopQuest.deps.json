@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "oopQuest/1.0.0": {
+      "OoPQuest/1.0.0": {
         "runtime": {
-          "oopQuest.dll": {}
+          "OoPQuest.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "oopQuest/1.0.0": {
+    "OoPQuest/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,4 +1,4 @@
-﻿namespace oopQuest
+﻿namespace OoPQuest
 {
     partial class Form1
     {
@@ -34,7 +34,7 @@
             this.magicButton = new System.Windows.Forms.Button();
             this.fleeButton = new System.Windows.Forms.Button();
             this.playerLabel = new System.Windows.Forms.Label();
-            this.playerNameBoc = new System.Windows.Forms.TextBox();
+            this.playerNameBox = new System.Windows.Forms.TextBox();
             this.playerHPLabel = new System.Windows.Forms.Label();
             this.playerHPBox = new System.Windows.Forms.TextBox();
             this.playerMPLabel = new System.Windows.Forms.Label();
@@ -47,6 +47,7 @@
             this.enemyNameBox = new System.Windows.Forms.TextBox();
             this.enemyHPLabel = new System.Windows.Forms.Label();
             this.enemyHPBox = new System.Windows.Forms.TextBox();
+            this.startButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // outputBox
@@ -105,12 +106,13 @@
             this.playerLabel.TabIndex = 2;
             this.playerLabel.Text = "Player:";
             // 
-            // playerNameBoc
+            // playerNameBox
             // 
-            this.playerNameBoc.Location = new System.Drawing.Point(72, 73);
-            this.playerNameBoc.Name = "playerNameBoc";
-            this.playerNameBoc.Size = new System.Drawing.Size(100, 23);
-            this.playerNameBoc.TabIndex = 3;
+            this.playerNameBox.Location = new System.Drawing.Point(72, 73);
+            this.playerNameBox.Name = "playerNameBox";
+            this.playerNameBox.ReadOnly = true;
+            this.playerNameBox.Size = new System.Drawing.Size(100, 23);
+            this.playerNameBox.TabIndex = 3;
             // 
             // playerHPLabel
             // 
@@ -125,6 +127,7 @@
             // 
             this.playerHPBox.Location = new System.Drawing.Point(72, 131);
             this.playerHPBox.Name = "playerHPBox";
+            this.playerHPBox.ReadOnly = true;
             this.playerHPBox.Size = new System.Drawing.Size(100, 23);
             this.playerHPBox.TabIndex = 3;
             // 
@@ -141,6 +144,7 @@
             // 
             this.playerMPBox.Location = new System.Drawing.Point(72, 176);
             this.playerMPBox.Name = "playerMPBox";
+            this.playerMPBox.ReadOnly = true;
             this.playerMPBox.Size = new System.Drawing.Size(100, 23);
             this.playerMPBox.TabIndex = 3;
             // 
@@ -157,6 +161,7 @@
             // 
             this.playerPotionBox.Location = new System.Drawing.Point(72, 241);
             this.playerPotionBox.Name = "playerPotionBox";
+            this.playerPotionBox.ReadOnly = true;
             this.playerPotionBox.Size = new System.Drawing.Size(100, 23);
             this.playerPotionBox.TabIndex = 3;
             // 
@@ -173,6 +178,7 @@
             // 
             this.playerElixirBox.Location = new System.Drawing.Point(72, 288);
             this.playerElixirBox.Name = "playerElixirBox";
+            this.playerElixirBox.ReadOnly = true;
             this.playerElixirBox.Size = new System.Drawing.Size(100, 23);
             this.playerElixirBox.TabIndex = 3;
             // 
@@ -189,6 +195,7 @@
             // 
             this.enemyNameBox.Location = new System.Drawing.Point(1106, 76);
             this.enemyNameBox.Name = "enemyNameBox";
+            this.enemyNameBox.ReadOnly = true;
             this.enemyNameBox.Size = new System.Drawing.Size(100, 23);
             this.enemyNameBox.TabIndex = 3;
             // 
@@ -206,15 +213,27 @@
             // 
             this.enemyHPBox.Location = new System.Drawing.Point(1106, 131);
             this.enemyHPBox.Name = "enemyHPBox";
+            this.enemyHPBox.ReadOnly = true;
             this.enemyHPBox.Size = new System.Drawing.Size(100, 23);
             this.enemyHPBox.TabIndex = 3;
             this.enemyHPBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // startButton
+            // 
+            this.startButton.Location = new System.Drawing.Point(50, 350);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(122, 35);
+            this.startButton.TabIndex = 1;
+            this.startButton.Text = "Start Game";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1229, 658);
+            this.Controls.Add(this.startButton);
             this.Controls.Add(this.enemyHPBox);
             this.Controls.Add(this.enemyHPLabel);
             this.Controls.Add(this.enemyNameBox);
@@ -227,7 +246,7 @@
             this.Controls.Add(this.playerMPLabel);
             this.Controls.Add(this.playerHPBox);
             this.Controls.Add(this.playerHPLabel);
-            this.Controls.Add(this.playerNameBoc);
+            this.Controls.Add(this.playerNameBox);
             this.Controls.Add(this.playerLabel);
             this.Controls.Add(this.fleeButton);
             this.Controls.Add(this.magicButton);
@@ -243,25 +262,26 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox outputBox;
+        public System.Windows.Forms.TextBox outputBox;
         private System.Windows.Forms.Button attackButton;
         private System.Windows.Forms.Button itemButton;
         private System.Windows.Forms.Button magicButton;
         private System.Windows.Forms.Button fleeButton;
         private System.Windows.Forms.Label playerLabel;
-        private System.Windows.Forms.TextBox playerNameBoc;
+        public System.Windows.Forms.TextBox playerNameBox;
         private System.Windows.Forms.Label playerHPLabel;
-        private System.Windows.Forms.TextBox playerHPBox;
+        public System.Windows.Forms.TextBox playerHPBox;
         private System.Windows.Forms.Label playerMPLabel;
-        private System.Windows.Forms.TextBox playerMPBox;
+        public System.Windows.Forms.TextBox playerMPBox;
         private System.Windows.Forms.Label playerPotionLabel;
-        private System.Windows.Forms.TextBox playerPotionBox;
+        public System.Windows.Forms.TextBox playerPotionBox;
         private System.Windows.Forms.Label playerElixirLabel;
-        private System.Windows.Forms.TextBox playerElixirBox;
+        public System.Windows.Forms.TextBox playerElixirBox;
         private System.Windows.Forms.Label enemyNameLabel;
-        private System.Windows.Forms.TextBox enemyNameBox;
+        public System.Windows.Forms.TextBox enemyNameBox;
         private System.Windows.Forms.Label enemyHPLabel;
-        private System.Windows.Forms.TextBox enemyHPBox;
+        public System.Windows.Forms.TextBox enemyHPBox;
+        private System.Windows.Forms.Button startButton;
     }
 }
 
