@@ -41,11 +41,11 @@ namespace OoPQuest
 		{
 			get
 			{
-				return baseMP;
+				return _baseMP;
 			}
 			set
 			{
-				baseMP = value;
+				_baseMP = value;
 			}
 		}
 
@@ -53,11 +53,11 @@ namespace OoPQuest
 		{
 			get
 			{
-				return baseAttack;
+				return _baseAttack;
 			}
 			set
 			{
-				baseAttack = value;
+				_baseAttack = value;
 			}
 		}
 

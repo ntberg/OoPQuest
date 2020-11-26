@@ -32,17 +32,13 @@
             this.attackButton = new System.Windows.Forms.Button();
             this.itemButton = new System.Windows.Forms.Button();
             this.magicButton = new System.Windows.Forms.Button();
-            this.fleeButton = new System.Windows.Forms.Button();
+            this.defendButton = new System.Windows.Forms.Button();
             this.playerLabel = new System.Windows.Forms.Label();
             this.playerNameBox = new System.Windows.Forms.TextBox();
             this.playerHPLabel = new System.Windows.Forms.Label();
             this.playerHPBox = new System.Windows.Forms.TextBox();
             this.playerMPLabel = new System.Windows.Forms.Label();
             this.playerMPBox = new System.Windows.Forms.TextBox();
-            this.playerPotionLabel = new System.Windows.Forms.Label();
-            this.playerPotionBox = new System.Windows.Forms.TextBox();
-            this.playerElixirLabel = new System.Windows.Forms.Label();
-            this.playerElixirBox = new System.Windows.Forms.TextBox();
             this.enemyNameLabel = new System.Windows.Forms.Label();
             this.enemyNameBox = new System.Windows.Forms.TextBox();
             this.enemyHPLabel = new System.Windows.Forms.Label();
@@ -57,7 +53,6 @@
             this.outputBox.Name = "outputBox";
             this.outputBox.Size = new System.Drawing.Size(821, 476);
             this.outputBox.TabIndex = 0;
-            this.outputBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // attackButton
             // 
@@ -77,6 +72,7 @@
             this.itemButton.TabIndex = 1;
             this.itemButton.Text = "Item";
             this.itemButton.UseVisualStyleBackColor = true;
+            this.itemButton.Click += new System.EventHandler(this.itemButton_Click);
             // 
             // magicButton
             // 
@@ -88,14 +84,15 @@
             this.magicButton.UseVisualStyleBackColor = true;
             this.magicButton.Click += new System.EventHandler(this.magicButton_Click);
             // 
-            // fleeButton
+            // defendButton
             // 
-            this.fleeButton.Location = new System.Drawing.Point(703, 589);
-            this.fleeButton.Name = "fleeButton";
-            this.fleeButton.Size = new System.Drawing.Size(122, 57);
-            this.fleeButton.TabIndex = 1;
-            this.fleeButton.Text = "Flee";
-            this.fleeButton.UseVisualStyleBackColor = true;
+            this.defendButton.Location = new System.Drawing.Point(703, 589);
+            this.defendButton.Name = "defendButton";
+            this.defendButton.Size = new System.Drawing.Size(122, 57);
+            this.defendButton.TabIndex = 1;
+            this.defendButton.Text = "Defend";
+            this.defendButton.UseVisualStyleBackColor = true;
+            this.defendButton.Click += new System.EventHandler(this.defendButton_Click);
             // 
             // playerLabel
             // 
@@ -148,40 +145,6 @@
             this.playerMPBox.Size = new System.Drawing.Size(100, 23);
             this.playerMPBox.TabIndex = 3;
             // 
-            // playerPotionLabel
-            // 
-            this.playerPotionLabel.AutoSize = true;
-            this.playerPotionLabel.Location = new System.Drawing.Point(12, 244);
-            this.playerPotionLabel.Name = "playerPotionLabel";
-            this.playerPotionLabel.Size = new System.Drawing.Size(50, 15);
-            this.playerPotionLabel.TabIndex = 2;
-            this.playerPotionLabel.Text = "Potions:";
-            // 
-            // playerPotionBox
-            // 
-            this.playerPotionBox.Location = new System.Drawing.Point(72, 241);
-            this.playerPotionBox.Name = "playerPotionBox";
-            this.playerPotionBox.ReadOnly = true;
-            this.playerPotionBox.Size = new System.Drawing.Size(100, 23);
-            this.playerPotionBox.TabIndex = 3;
-            // 
-            // playerElixirLabel
-            // 
-            this.playerElixirLabel.AutoSize = true;
-            this.playerElixirLabel.Location = new System.Drawing.Point(12, 291);
-            this.playerElixirLabel.Name = "playerElixirLabel";
-            this.playerElixirLabel.Size = new System.Drawing.Size(40, 15);
-            this.playerElixirLabel.TabIndex = 2;
-            this.playerElixirLabel.Text = "Elixirs:";
-            // 
-            // playerElixirBox
-            // 
-            this.playerElixirBox.Location = new System.Drawing.Point(72, 288);
-            this.playerElixirBox.Name = "playerElixirBox";
-            this.playerElixirBox.ReadOnly = true;
-            this.playerElixirBox.Size = new System.Drawing.Size(100, 23);
-            this.playerElixirBox.TabIndex = 3;
-            // 
             // enemyNameLabel
             // 
             this.enemyNameLabel.AutoSize = true;
@@ -207,7 +170,6 @@
             this.enemyHPLabel.Size = new System.Drawing.Size(26, 15);
             this.enemyHPLabel.TabIndex = 2;
             this.enemyHPLabel.Text = "HP:";
-            this.enemyHPLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // enemyHPBox
             // 
@@ -216,7 +178,6 @@
             this.enemyHPBox.ReadOnly = true;
             this.enemyHPBox.Size = new System.Drawing.Size(100, 23);
             this.enemyHPBox.TabIndex = 3;
-            this.enemyHPBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // startButton
             // 
@@ -238,17 +199,13 @@
             this.Controls.Add(this.enemyHPLabel);
             this.Controls.Add(this.enemyNameBox);
             this.Controls.Add(this.enemyNameLabel);
-            this.Controls.Add(this.playerElixirBox);
-            this.Controls.Add(this.playerElixirLabel);
-            this.Controls.Add(this.playerPotionBox);
-            this.Controls.Add(this.playerPotionLabel);
             this.Controls.Add(this.playerMPBox);
             this.Controls.Add(this.playerMPLabel);
             this.Controls.Add(this.playerHPBox);
             this.Controls.Add(this.playerHPLabel);
             this.Controls.Add(this.playerNameBox);
             this.Controls.Add(this.playerLabel);
-            this.Controls.Add(this.fleeButton);
+            this.Controls.Add(this.defendButton);
             this.Controls.Add(this.magicButton);
             this.Controls.Add(this.itemButton);
             this.Controls.Add(this.attackButton);
@@ -266,17 +223,13 @@
         private System.Windows.Forms.Button attackButton;
         private System.Windows.Forms.Button itemButton;
         private System.Windows.Forms.Button magicButton;
-        private System.Windows.Forms.Button fleeButton;
+        private System.Windows.Forms.Button defendButton;
         private System.Windows.Forms.Label playerLabel;
         public System.Windows.Forms.TextBox playerNameBox;
         private System.Windows.Forms.Label playerHPLabel;
         public System.Windows.Forms.TextBox playerHPBox;
         private System.Windows.Forms.Label playerMPLabel;
         public System.Windows.Forms.TextBox playerMPBox;
-        private System.Windows.Forms.Label playerPotionLabel;
-        public System.Windows.Forms.TextBox playerPotionBox;
-        private System.Windows.Forms.Label playerElixirLabel;
-        public System.Windows.Forms.TextBox playerElixirBox;
         private System.Windows.Forms.Label enemyNameLabel;
         public System.Windows.Forms.TextBox enemyNameBox;
         private System.Windows.Forms.Label enemyHPLabel;

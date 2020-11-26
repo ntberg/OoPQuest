@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace OoPQuest
 {
@@ -10,27 +11,46 @@ namespace OoPQuest
 		Enemy _Enemy;
 		Arena _Arena;
 
-		public void runEnemyTurn(Player player, Enemy enemy)
+		public void checkHP(TextBox outputBox)
 		{
-			enemy.Attack(enemy, player);
-		
-		}
-		public int checkHP(Player player, Enemy enemy)
-		{
-			if (player.curHP<=0)
+			if (this.Player.curHP<=0)
             {
-				return 1;
-            }
-			else if (enemy.curHP<=0)
+				outputBox.AppendText("You died..." + Environment.NewLine);
+				outputBox.AppendText("Press Start to try a different encounter" + Environment.NewLine);
+			}
+			else if (this.Enemy.curHP<=0)
             {
-				return 2;
-            }
-			else
-            {
-				return 0;
-            }
+				outputBox.AppendText("The enemy died!" + Environment.NewLine);
+				this.Enemy.speakDeath(outputBox);
+				outputBox.AppendText("Press Start to begin your next encounter!" + Environment.NewLine);
+
+			}
+			
 
 		}
+
+
+
+
+		public void startEncounter (Player player, Enemy enemy, Arena arena, TextBox outputBox, TextBox enemyNameBox, TextBox enemyHPBox)
+        {
+			this.Player = player;
+			this.Enemy = enemy;
+			this.Arena = arena;
+
+			//reset player hp/mp
+			this.Player.curHP = this.Player.statHP;
+			this.Player.curMP = this.Player.statMP;
+
+			enemyNameBox.Text = this.Enemy.Name;
+			enemyHPBox.Text = this.Enemy.curHP.ToString();
+
+			outputBox.AppendText("Encounter started against " + this.Enemy.Name + " in arena " + this.Arena.Name + Environment.NewLine);
+			outputBox.AppendText("The first turn is yours." + Environment.NewLine);
+		}
+
+		
+		
 
 		public Player Player
 		{

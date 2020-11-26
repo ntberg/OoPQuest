@@ -1,27 +1,37 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace OoPQuest
 {
 	public class Enemy : Character
 	{
-		int _XP;
+		string _deathText;
 
-		public void speakDeath()
+		public void speakDeath(TextBox outputBox)
 		{
-			throw new NotImplementedException();
+			outputBox.AppendText(this.Name + ": " + this.deathText + Environment.NewLine);
 		}
 
-		public int XP
+		public Enemy(string Name, int statHP, int statAttack, string deathText)
+		{
+			this.Name = Name;
+			this.statHP = statHP;
+			this.curHP = statHP; //init current health
+			this.statAttack = statAttack;
+			this.deathText = deathText;
+		}
+
+		public string deathText
 		{
 			get
 			{
-				throw new NotImplementedException();
+				return _deathText;
 			}
 			set
 			{
-				throw new NotImplementedException();
+				_deathText = value;
 			}
 		}
 	}

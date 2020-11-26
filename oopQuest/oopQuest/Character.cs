@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace OoPQuest
 {
@@ -11,10 +12,19 @@ namespace OoPQuest
 		int _statAttack;
 		int _curHP;
 
-		public void Attack(Character source, Character target)
+		public virtual void Attack(Character source, Character target, TextBox outputBox, TextBox hpBox)
 		{
-			target.curHP = target.curHP - source.statAttack;
-			return;
+			if (this.curHP > 0)
+			{
+				target.curHP = target.curHP - source.statAttack;
+				outputBox.AppendText(source.Name + " attacked " + target.Name + Environment.NewLine);
+				hpBox.Text = target.curHP.ToString();
+				return;
+			}
+			else
+            {
+				outputBox.AppendText(source.Name + " tried to attack but " + target.Name + " was already dead." + Environment.NewLine);
+			}
 		}
 
 		public string Name
